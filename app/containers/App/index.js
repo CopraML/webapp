@@ -15,6 +15,7 @@ import StepOne from 'containers/CategorySelection/Loadable';
 import StepTwo from 'containers/RecommendationSelection/Loadable';
 import StepThree from 'containers/ColourPalette/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
+import UIPrediction from 'containers/UIPrediction/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import HeaderNavBar from 'components/HeaderNavBar';
 
@@ -37,6 +38,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/create" component={StepOne} />
         <Route exact path="/create/palette" component={StepThree} />
+        <Route exact path="/ui" component={UIPrediction} />
         <Route exact path="/create/:id" component={StepTwo} />
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
