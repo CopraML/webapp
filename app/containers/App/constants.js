@@ -14,3 +14,4 @@ export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
 export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
 export const DEFAULT_LOCALE = 'en';
 export const CATEGORY_IMAGE_URL = 'http://172.16.4.81:8002';
+export const CATEGORY_API_URL = 'http://172.16.4.81:8007';
