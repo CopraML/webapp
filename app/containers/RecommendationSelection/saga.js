@@ -4,6 +4,7 @@
 
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request';
+import { CATEGORY_API_URL } from 'containers/App/constants';
 import { storeCategoryImage } from './actions';
 import { makeSelectCategoryName } from './selectors';
 import { GET_IMAGE_BY_CATEGORY } from './constants';
@@ -14,7 +15,7 @@ import { GET_IMAGE_BY_CATEGORY } from './constants';
 export function* getImages() {
   // Select username from store
   const categoryName = yield select(makeSelectCategoryName());
-  const requestURL = 'http://172.16.4.81:8000/get_image_by_category/';
+  const requestURL = `${CATEGORY_API_URL}/get_image_by_category/`;
   try {
     // Call our request helper (see 'utils/request')
     const postRequest = yield call(request, requestURL, {
