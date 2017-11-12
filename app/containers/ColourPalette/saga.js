@@ -4,6 +4,7 @@
 
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request';
+import { push } from 'react-router-redux';
 import { CATEGORY_API_URL } from 'containers/App/constants';
 import { SUBMIT_SELECTED_IMAGES } from './constants';
 import { makeSelectedTickedImages, makeSelectedChosenColour } from './selectors';
@@ -27,6 +28,7 @@ export function* submitImageChoices() {
       yield put(storePredictedUI(postRequest.ui_json));
     }
   } catch (err) {
+    yield put(push('/ui'));
     console.log(err);
   }
 }
