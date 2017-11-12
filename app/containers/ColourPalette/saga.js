@@ -4,6 +4,7 @@
 
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request';
+import { CATEGORY_API_URL } from 'containers/App/constants';
 import { SUBMIT_SELECTED_IMAGES } from './constants';
 import { makeSelectedTickedImages, makeSelectedChosenColour } from './selectors';
 import { storePredictedUI } from './actions';
@@ -12,7 +13,7 @@ export function* submitImageChoices() {
   // Select username from store
   const selectedImages = yield select(makeSelectedTickedImages());
   const selectedColour = yield select(makeSelectedChosenColour());
-  const requestURL = 'http://172.16.4.81:8000/submit_selected_images/';
+  const requestURL = `${CATEGORY_API_URL}/submit_selected_images/`;
   try {
     // Call our request helper (see 'utils/request')
     const postRequest = yield call(request, requestURL, {
