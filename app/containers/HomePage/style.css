@@ -1,28 +1,29 @@
 .copraLogo {
-    font-size: 2.3rem;
     color:#007aff;
     margin-top: 6rem;
-    margin-bottom: 5rem;
-}   
+    margin-bottom: 1rem;
+}
 
 .copraLogo span {
-    font-weight:200;
-    color:#454545;
-   
+  color:#454545;
 }
 
 .hero-headline {
     margin-bottom: 2rem;
     font-size: 1.8rem;
     color: #323232;
+    font-weight: 300;
 }
 
 .flash-div {
     color: #fbce10
 }
 
-.wireframe--logo {
-    font-weight: 200;
-    text-decoration: underline;
+.create-project {
+  margin-top: 6rem;
 }
 
+.wireframe-logo {
+  font-size: 5rem;
+  font-weight: 400;
+}
