@@ -16,8 +16,9 @@
  */
 
 import {
-  CHANGE_USERNAME,
   SAVE_COLOUR_PALETTE,
+  SAVE_UI_JSON,
+  SUBMIT_SELECTED_IMAGES,
 } from './constants';
 
 /**
@@ -27,16 +28,23 @@ import {
  *
  * @return {object}    An action object with a type of CHANGE_USERNAME
  */
-export function changeUsername(name) {
-  return {
-    type: CHANGE_USERNAME,
-    name,
-  };
-}
 
 export function saveColourPalette(colour) {
   return {
     type: SAVE_COLOUR_PALETTE,
     colour,
+  };
+}
+
+export function submitSelectedImages() {
+  return {
+    type: SUBMIT_SELECTED_IMAGES,
+  };
+}
+
+export function storePredictedUI(uiJSON) {
+  return {
+    type: SAVE_UI_JSON,
+    uiJSON,
   };
 }

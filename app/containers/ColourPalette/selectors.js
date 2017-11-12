@@ -4,14 +4,20 @@
 
 import { createSelector } from 'reselect';
 
-const selectHome = (state) => state.get('home');
+const selectCategory = (state) => state.get('categorySelection');
 
-const makeSelectUsername = () => createSelector(
-  selectHome,
-  (homeState) => homeState.get('username')
+const makeSelectedTickedImages = () => createSelector(
+  selectCategory,
+  (categoryState) => categoryState.get('selectedImages')
+);
+
+const makeSelectedChosenColour = () => createSelector(
+  selectCategory,
+  (categoryState) => categoryState.get('colourPalette')
 );
 
 export {
-  selectHome,
-  makeSelectUsername,
+  selectCategory,
+  makeSelectedTickedImages,
+  makeSelectedChosenColour,
 };

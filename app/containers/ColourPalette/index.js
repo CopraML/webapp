@@ -12,7 +12,7 @@ import { compose } from 'redux';
 import CreateHeader from 'components/CreateHeader';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
-import { saveColourPalette } from './actions';
+import { saveColourPalette, submitSelectedImages } from './actions';
 // import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
@@ -82,6 +82,7 @@ export class ColourPalette extends React.PureComponent { // eslint-disable-line 
   }
 
   render() {
+    const { submitUserSelectedImages } = this.props;
     return (
       <article>
         <Helmet>
@@ -98,7 +99,7 @@ export class ColourPalette extends React.PureComponent { // eslint-disable-line 
           <div className="container mt-5">
             <div className="justify-content-sm-center row">
               <div className="col text-center">
-                <button className="btn btn-primary">Next Step
+                <button className="btn btn-primary" onClick={() => submitUserSelectedImages()}>Next Step
                   <i className="fa fa-chevron-right ml-2" aria-hidden="true"></i>
                 </button>
               </div>
@@ -112,11 +113,13 @@ export class ColourPalette extends React.PureComponent { // eslint-disable-line 
 
 ColourPalette.propTypes = {
   selectPalette: PropTypes.func,
+  submitUserSelectedImages: PropTypes.func,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
     selectPalette: (colour) => dispatch(saveColourPalette(colour)),
+    submitUserSelectedImages: () => dispatch(submitSelectedImages()),
   };
 }
 

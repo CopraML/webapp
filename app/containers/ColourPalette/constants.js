@@ -9,5 +9,7 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
+export const CHANGE_USERNAME = 'boilerplate/colourPalette/CHANGE_USERNAME';
 export const SAVE_COLOUR_PALETTE = 'boilerplate/colourPalette/SAVE_COLOUR_PALETTE';
+export const SAVE_UI_JSON = 'boilerplate/colourPalette/SAVE_UI_JSON';
+export const SUBMIT_SELECTED_IMAGES = 'boilerplate/colourPalette/SUBMIT_SELECTED_IMAGES';
